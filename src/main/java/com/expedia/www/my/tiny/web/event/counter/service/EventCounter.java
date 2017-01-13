@@ -59,8 +59,7 @@ public class EventCounter<T extends Comparable<T>> {
             this.currentMinute = currentMinute();
 
             // A few threads would be in by now, but don't worry, with tryLock, they'll fall through without hurting
-            this.lock.tryLock();
-            if (this.lock.isHeldByCurrentThread()) {
+            if (this.lock.tryLock()) {
                 try {
                     this.HEAD = pushElement();
                 } finally {

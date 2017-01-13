@@ -9,8 +9,6 @@ Prerequisites
 * Java 1.8
 * Maven 3.1.1+
 
-NOTE: If you do not have Expedia Maven repository set up, copy ```settings.xml``` into ```~/.m2/``` folder.
-
 Building
 ========
 
@@ -52,8 +50,6 @@ Docker
 Docker Prerequisites
 --------------------
 
-In order to use Expedia's internal Docker Repository, you must trust the SSL cert. For instructions, see:
- [https://ewegithub.sb.karmalab.net/EWE/docker](https://ewegithub.sb.karmalab.net/EWE/docker)
 
 Building the Docker Image
 -------------------------
@@ -70,7 +66,7 @@ Running the Docker Image
 ------------------------
 
 ```
-docker run -e "APP_NAME=my-tiny-web-event-counter-service" -e "EXPEDIA_ENVIRONMENT=dev" -e "ACTIVE_VERSION=$(git rev-parse HEAD)" -p 8080:8080 my-tiny-web-event-counter-service
+docker run -e "APP_NAME=my-tiny-web-event-counter-service" -e "YOUR_ENVIRONMENT=dev" -e "ACTIVE_VERSION=$(git rev-parse HEAD)" -p 8080:8080 my-tiny-web-event-counter-service
 ```
 
 Open a browser and visit [http://LOCAL_DOCKER_IP:8080/](http://LOCAL_DOCKER_IP:8080/) (use, for example, 
